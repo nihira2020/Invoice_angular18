@@ -1,0 +1,25 @@
+.mat-mdc-card{
+    width: 90%;
+    margin: 2% 0 0 5%;
+}
+.mat-half-width{
+    width: 49%;
+    margin: 3px;
+}
+.mat-full-width{
+    width: 99%;
+}
+
+table{
+    width: 100%;
+}
+td{
+    border: 1px solid #000;
+}
+th{
+    width: 100%;
+    border: 1px solid #ccc;
+}
+.mdc-button{
+    margin: 2px;
+}

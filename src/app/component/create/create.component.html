@@ -1,0 +1,133 @@
+<form [formGroup]="invoiceform" (ngSubmit)="SaveInvoice()">
+    <mat-card>
+        <mat-card-header>
+            <h2>{{title}}</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field class="mat-half-width">
+                <mat-label>Invoice No</mat-label>
+                <input matInput formControlName="invoiceno">
+            </mat-form-field>
+
+            <mat-form-field class="mat-half-width">
+                <mat-label>Invoice Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="invoicedate">
+                <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+
+            <mat-form-field class="mat-half-width">
+                <mat-label>Customer</mat-label>
+                <mat-select formControlName="customerid" (selectionChange)="Customerchange($event.value)">
+                    @for(item of customerlist;track item){
+                    <mat-option [value]="item.id">{{item.name}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="mat-half-width">
+                <mat-label>Tax</mat-label>
+                <mat-select formControlName="taxcode" (selectionChange)="Taxchange($event.value)">
+                    @for(item of taxlist;track item){
+                    <mat-option [value]="item.id">{{item.id}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="mat-full-width">
+                <mat-label>Delivery Address</mat-label>
+                <textarea matInput formControlName="address"></textarea>
+            </mat-form-field>
+
+            <mat-card style="width: 99%;margin: 1px;">
+                <mat-card-header>
+                    <h3>Product section</h3>
+                </mat-card-header>
+                <mat-card-content>
+                    <table formArrayName="products">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%;">Sl.No</th>
+                                <th style="width: 40%;">Product</th>
+                                <th style="width: 15%;">Qty</th>
+                                <th style="width: 15%;">Price</th>
+                                <th style="width: 15%;">Total</th>
+                                <th style="width: 10%;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of invproducts.controls;let i=index" [formGroupName]="i">
+                                <td>{{i+1}}</td>
+                                <td>
+                                    <mat-form-field class="mat-full-width">
+                                        <mat-select formControlName="productid" (selectionChange)="productchange(i)">
+                                            @for(item of productlist;track item){
+                                            <mat-option [value]="item.id">{{item.name}}</mat-option>
+                                            }
+                                        </mat-select>
+                                    </mat-form-field>
+
+                                </td>
+                                <td>
+                                    <mat-form-field class="mat-full-width">
+                                        <input matInput formControlName="qty" (change)="productcalulate(i)">
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field class="mat-full-width">
+                                        <input matInput formControlName="price" (change)="productcalulate(i)">
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field class="mat-full-width">
+                                        <input matInput formControlName="total">
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <a mat-raised-button color="accent" (click)="Deleteproduct(i)">Delete</a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    <a mat-raised-button (click)="addnewproduct()">[+]</a>
+                                </td>
+                            </tr>
+                        </tfoot>
+
+                    </table>
+
+                </mat-card-content>
+
+            </mat-card>
+            <mat-card style="width: 99%;margin: 1px;">
+                <mat-card-content>
+                    <mat-list>
+                        <mat-list-item>
+                            Summary Total : <b>{{summarytotal | currency}}</b>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>
+                            Summary Tax : <b>{{summarytax| currency}}</b>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>
+                            Summary Net Total : <b>{{summarynettotal| currency}}</b>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+
+            </mat-card>
+
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">Save</button>
+            <a mat-raised-button color="accent" (click)="backtolist()">Cancel</a>
+        </mat-card-actions>
+
+    </mat-card>
+</form>

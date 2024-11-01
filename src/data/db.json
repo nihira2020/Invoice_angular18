@@ -1,0 +1,122 @@
+{
+  "customer": [
+    {
+      "id": "CS001",
+      "name": "Ravi krishna",
+      "address": "1st street, Nandan street, chennai 600021",
+      "taxcode": "Inclusive"
+    },
+    {
+      "id": "CS002",
+      "name": "Ramesh Kannan",
+      "address": "2nd street, Nandan street, chennai 600021",
+      "taxcode": "Exclusive"
+    },
+    {
+      "id": "CS003",
+      "name": "Kishore kumar",
+      "address": "3rd street, Nandan street, chennai 600021",
+      "taxcode": "Zero"
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "name": "Cricket bat",
+      "description": "High quality we can use for leather ball",
+      "price": "10001",
+      "status": true
+    },
+    {
+      "id": 3,
+      "name": "Stumbber ball",
+      "description": "Rubber ball",
+      "price": "25",
+      "status": true
+    },
+    {
+      "id": 6,
+      "name": "Keeping clove",
+      "description": "clove new",
+      "price": "300",
+      "status": true
+    },
+    {
+      "id": 11,
+      "name": "tennis bat",
+      "description": "new",
+      "price": "11",
+      "status": true
+    }
+  ],
+  "tax": [
+    {
+      "id": "Inclusive",
+      "type": "I",
+      "perc": 7
+    },
+    {
+      "id": "Exclusive",
+      "type": "E",
+      "perc": 7
+    },
+    {
+      "id": "Zero",
+      "type": "Z",
+      "perc": 0
+    }
+  ],
+  "invoice": [
+    {
+      "id": 1,
+      "customerid": "CS002",
+      "customername": "Ramesh Kannan",
+      "deliveryaddress": "2nd street, Nandan street, chennai 600021",
+      "invoicedate": "2024-10-27T14:46:21.276Z",
+      "taxcode": "Exclusive",
+      "taxtype": "E",
+      "taxperc": 7,
+      "total": 325,
+      "tax": 22.750000000000004,
+      "nettotal": 347.75,
+      "products": [
+        {
+          "productid": 3,
+          "name": "Stumbber ball",
+          "qty": 1,
+          "price": "25",
+          "total": 25
+        },
+        {
+          "productid": 6,
+          "name": "Keeping clove",
+          "qty": 1,
+          "price": "300",
+          "total": 300
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "customerid": "CS002",
+      "customername": "Ramesh Kannan",
+      "deliveryaddress": "2nd street, Nandan street, chennai 600021",
+      "invoicedate": "2024-10-27T17:57:35.077Z",
+      "taxcode": "Exclusive",
+      "taxtype": "E",
+      "taxperc": 7,
+      "total": 25,
+      "tax": 1.7500000000000002,
+      "nettotal": 26.75,
+      "products": [
+        {
+          "productid": 3,
+          "name": "Stumbber ball",
+          "qty": 1,
+          "price": "25",
+          "total": 25
+        }
+      ]
+    }
+  ]
+}
