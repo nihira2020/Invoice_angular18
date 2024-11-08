@@ -117,6 +117,72 @@
           "total": 25
         }
       ]
+    },
+    {
+      "id": 4,
+      "customerid": "CS002",
+      "customername": "Ramesh Kannan",
+      "deliveryaddress": "2nd street, Nandan street, chennai 600021",
+      "invoicedate": "2024-11-01T14:28:24.946Z",
+      "taxcode": "Exclusive",
+      "taxtype": "E",
+      "taxperc": 7,
+      "total": 25,
+      "tax": 1.7500000000000002,
+      "nettotal": 26.75,
+      "products": [
+        {
+          "productid": 3,
+          "name": "Stumbber ball",
+          "qty": 1,
+          "price": "25",
+          "total": 25
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "customerid": "CS003",
+      "customername": "Kishore kumar",
+      "deliveryaddress": "3rd street, Nandan street, chennai 600021",
+      "invoicedate": "2024-11-01T14:28:51.861Z",
+      "taxcode": "Zero",
+      "taxtype": "Z",
+      "taxperc": 0,
+      "total": 11,
+      "tax": 0,
+      "nettotal": 11,
+      "products": [
+        {
+          "productid": 11,
+          "name": "tennis bat",
+          "qty": 1,
+          "price": "11",
+          "total": 11
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "customerid": "CS001",
+      "customername": "Ravi krishna",
+      "deliveryaddress": "1st street, Nandan street, chennai 600021",
+      "invoicedate": "2024-11-01T14:28:59.523Z",
+      "taxcode": "Inclusive",
+      "taxtype": "I",
+      "taxperc": 7,
+      "total": 10001,
+      "tax": 654.2710280373831,
+      "nettotal": 10001,
+      "products": [
+        {
+          "productid": 1,
+          "name": "Cricket bat",
+          "qty": 1,
+          "price": "10001",
+          "total": 10001
+        }
+      ]
     }
   ]
 }

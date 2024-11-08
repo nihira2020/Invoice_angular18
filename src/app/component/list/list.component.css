@@ -6,3 +6,7 @@
 .mdc-button{
     margin: 2px;
 }
+
+.mat-full-width{
+    width: 99%;
+}
