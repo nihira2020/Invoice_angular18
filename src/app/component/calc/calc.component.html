@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-header>
+  <h2>Square Calculation</h2>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="example-form">
+            <mat-form-field class="mat-full-width">
+              <mat-label>Height</mat-label>
+              <input name="amount" matInput [(ngModel)]="height" >
+            </mat-form-field>
+            <mat-form-field class="mat-full-width">
+              <mat-label>Height</mat-label>
+              <input name="amount" matInput [(ngModel)]="width" >
+            </mat-form-field>
+          <div>
+            We received the value is : {{receiveddata}}
+          </div>
+          </form>
+        <app-calcbtn (confirmdata)="getdata($event)" [ht]="height" [width]="width">
+
+        </app-calcbtn>
+    </mat-card-content>
+</mat-card>
